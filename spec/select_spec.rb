@@ -9,9 +9,9 @@ describe 'querying the bears table' do
     File.open('lib/sql', 'w'){ |f| f.truncate(0) }
   end
 
-  # it 'selects all of the female bears and returns their name and age' do
-  #   expect(@db.execute(selects_all_female_bears_return_name_and_age)).to eq([["Tabitha", 6],["Melissa", 13], ["Wendy", 6]])
-  # end
+  it 'selects all of the female bears and returns their name and age' do
+    expect(@db.execute(selects_all_female_bears_return_name_and_age)).to eq([["Tabitha", 6],["Melissa", 13], ["Wendy", 6]])
+  end
 
   it 'selects all of the bears names and orders them in alphabetical order' do
     expect(@db.execute(selects_all_bears_names_and_orders_in_alphabetical_order)).to eq([[nil],["Grinch"],["Melissa"],["Mr. Chocolate"],["Rowdy"],["Sargeant Brown"],["Tabitha"],["Wendy"]])
